@@ -1,6 +1,6 @@
 # X-Road: System Parameters User Guide
 
-Version: 2.60  
+Version: 2.61  
 Doc. ID: UG-SYSPAR
 
 | Date       | Version  | Description                                                                  | Author             |
@@ -70,6 +70,7 @@ Doc. ID: UG-SYSPAR
 | 13.10.2020 | 2.58     | Add new parameter *akka-use-secure-remote-transport* | Jarkko Hyöty |
 | 11.02.2021 | 2.59     | Add new parameter *auto-update-timestamp-service-url* | Ilkka Seppälä |
 | 01.06.2021 | 2.60     | Add new parameter *messagelog.archive-grouping* | Jarkko Hyöty |
+| 04.08.2021 | 2.61     | Add new parameters for messagelog archive encryption | Jarkko Hyöty |
 
 ## Table of Contents
 
@@ -348,6 +349,11 @@ Proxy-ui has been removed in version 6.24 and it's parameters are not used anymo
 | truncated-body-allowed                           | false                                      |   |   | If the REST message body exceeds the maximum loggable body size, truncate the body in the log (true) or reject the message (false). |
 | clean-transaction-batch                          | 10000                                      |   |   | Maximun number of log records to remove in one transaction. |
 | archive-grouping                                 | none                                       |   |   | Archive file grouping, one of 'none', 'member' (group by member), 'subsystem' (group by subsystem). 
+| encryption-enabled                               | false                                      |   |   | Archive file encryption
+| gpg-home-directory                               | /etc/xroad/gpghome                         |   |   | GPG home for archive file encryption
+| encryption-keys-dir                              | /etc/xroad/gpghome                         |   |   | Directory for archive file encryption (recipient) PGP keys. Per-member keys can be used when grouping is by 'member' or 'subsystem' (subsystems use the member's key) |
+
+
 
 #### 3.7.1 Note on logged X-Road message headers
 
