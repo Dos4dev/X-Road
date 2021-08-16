@@ -2,7 +2,7 @@
 
 ---
 # Signed Document Download and Verification Manual
-**X-ROAD 6**
+**X-ROAD 7**
 
 Version: 1.7  
 Doc. ID: UG-SIGDOC

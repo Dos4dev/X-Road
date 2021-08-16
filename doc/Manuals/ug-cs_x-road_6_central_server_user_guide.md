@@ -159,13 +159,13 @@ See X-Road terms and abbreviations documentation \[[TA-TERMS](#Ref_TERMS)\].
 
 ## 1.3 References
 
-1. [CSI] Cybernetica AS. X-Road 6. Central Server Installation Guide. Document ID: [IG-CS](ig-cs_x-road_6_central_server_installation_guide.md)
-2. [IG-CSHA] Cybernetica AS. X-Road 6. Central Server High Availability Installation Guide. Document ID: [IG-CSHA](ig-csha_x-road_6_ha_installation_guide.md)
+1. [CSI] Cybernetica AS. X-Road 7. Central Server Installation Guide. Document ID: [IG-CS](ig-cs_x-road_6_central_server_installation_guide.md)
+2. [IG-CSHA] Cybernetica AS. X-Road 7. Central Server High Availability Installation Guide. Document ID: [IG-CSHA](ig-csha_x-road_6_ha_installation_guide.md)
 3. [JSON] Introducing JSON, [http://json.org/](http://json.org/)
 4. [SPEC-AL] Cybernetica AS. X-Road: Audit log events. Document ID: SPEC-AL
-5. [SSI] Cybernetica AS. X-Road 6. Security Server Installation Guide. Document ID: [IG-SS](ig-ss_x-road_v6_security_server_installation_guide.md)
-6. [IG-CS] Cybernetica AS. X-Road 6. Central Server Installation Guide. Document ID: [IG-CS](ig-cs_x-road_6_central_server_installation_guide.md)
-7. [UC-GCONF] Cybernetica AS. X-Road 6: Use Case Model for Global Configuration Distribution. Document ID: [UC-GCONF](../UseCases/uc-gconf_x-road_use_case_model_for_global_configuration_distribution_1.4_Y-883-8.md)
+5. [SSI] Cybernetica AS. X-Road 7. Security Server Installation Guide. Document ID: [IG-SS](ig-ss_x-road_v6_security_server_installation_guide.md)
+6. [IG-CS] Cybernetica AS. X-Road 7. Central Server Installation Guide. Document ID: [IG-CS](ig-cs_x-road_6_central_server_installation_guide.md)
+7. [UC-GCONF] Cybernetica AS. X-Road 7: Use Case Model for Global Configuration Distribution. Document ID: [UC-GCONF](../UseCases/uc-gconf_x-road_use_case_model_for_global_configuration_distribution_1.4_Y-883-8.md)
 8. [RFC-OCSP] Online Certificate Status Protocol – OCSP, [https://tools.ietf.org/html/rfc6960](https://tools.ietf.org/html/rfc6960)
 9. <a id="Ref_TERMS" class="anchor"></a>\[TA-TERMS\] X-Road Terms and Abbreviations. Document ID: [TA-TERMS](../terms_x-road_docs.md).
 

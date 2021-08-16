@@ -4,7 +4,7 @@
 
 # SIGNER CONSOLE USER GUIDE <!-- omit in toc -->
 
-**X-ROAD 6**
+**X-ROAD 7**
 
 Version: 2.7  
 Doc. ID: UG-SC

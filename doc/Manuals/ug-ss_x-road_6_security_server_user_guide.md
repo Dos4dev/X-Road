@@ -4,7 +4,7 @@
 
 # SECURITY SERVER USER GUIDE <!-- omit in toc -->
 
-**X-ROAD 6**
+**X-ROAD 7**
 
 Version: 2.58  
 Doc. ID: UG-SS
