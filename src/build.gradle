@@ -125,21 +125,13 @@ subprojects {
 
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        sourceCompatibility = 11
+        targetCompatibility = 11
     }
 
     tasks.withType(JavaExec) {
         if (project.hasProperty("args")) {
             args = project.getProperty("args").tokenize()
-        }
-    }
-
-    test {
-        if (JavaVersion.current() == JavaVersion.VERSION_1_8) {
-            //workaround for JDK-8156584
-            systemProperty("java.security.properties",
-                "${project.rootDir}/config/workaround-jdk-8156584-security.properties");
         }
     }
 
