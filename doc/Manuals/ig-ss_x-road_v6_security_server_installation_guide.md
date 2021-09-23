@@ -13,7 +13,10 @@ Doc. ID: IG-SS
 
 ## Version history <!-- omit in toc -->
 
- Date       | Version | Description                                                     | Author
+<details>
+<summary>Click to toggle Version history</summary>
+
+Date       | Version | Description                                                     | Author
  ---------- | ------- | --------------------------------------------------------------- | --------------------
  01.12.2014 | 1.0     | Initial version                                                 |
  19.01.2015 | 1.1     | License information added                                       |
@@ -66,6 +69,7 @@ Doc. ID: IG-SS
  26.08.2021 | 2.40    | Add instructions how to disable the messagelog addon before installing, add section [2.7 Disable the Messagelog Addon before Installation (optional)](#27-disable-the-messagelog-addon-before-installation-optional) | Caro Hautamäki
  03.08.2021 | 2.41    | Minor fixes | Ilkka Seppälä
  06.09.2021 | 2.42    | Update list of running services | Jarkko Hyöty
+</details>
 
 ## License
 
@@ -163,7 +167,10 @@ The security server is officially supported on the following platforms:
 The software can be installed both on physical and virtualized hardware (of the latter, Xen and Oracle VirtualBox have been tested).
 
 
-### 2.2 Reference Data
+### 2.2 Reference Data, Network Diagram and Requirements for the Security Server
+
+<details>
+<summary>Click to toggle</summary>
 
 *Note*: The information in empty cells should be determined before the server’s installation, by the person performing the installation.
 
@@ -237,6 +244,7 @@ Requirements to software and settings:
 * if the security server is separated from other networks by a firewall and/or NAT, the necessary connections to and from the security server are allowed (**reference data: 1.4; 1.5; 1.6; 1.7**). The enabling of auxiliary services which are necessary for the functioning and management of the operating system (such as DNS, NTP, and SSH) stay outside the scope of this guide;
 * if the security server has a private IP address, a corresponding NAT record must be created in the firewall (**reference data: 1.9**).
 
+</details>
 
 ### 2.4 Preparing OS
 
@@ -280,7 +288,10 @@ If you are installing the default setup with local PostgreSQL database and want 
 
 ### 2.6 Remote Database Setup (optional)
 
-*This is an optional step.* 
+<details>
+<summary>Click to toggle </summary>
+
+*This is an optional step.*
 
 Optionally, the security server can use a remote database server. To avoid installing the default local PostgreSQL server during security server installation, first install the `xroad-database-remote` -package.
 ```
@@ -320,6 +331,13 @@ psql -h <database host> -U <superuser> -tAc 'show server_version'
 ```
 
 For additional security, the `postgresql.connection.*` properties can be removed from the `/etc/xroad.properties` file after installation (keep the other properties added by the installer).
+</details>
+
+### 2.7 Disable the Messagelog Addon before Installation (optional)
+
+It is possible to preconfigure the Security Server installation so that the messagelog addon will be automatically disabled after the installation process is done. This also skips the creation of the messagelog database.
+
+In order to skip messagelog database creation and disable the messagelog addon, run the following command to add a boolean value into the debconf database before installing the Security Server 
 
 ### 2.7 Disable the Messagelog Addon before Installation (optional)
 
@@ -388,6 +406,9 @@ The installation is successful if system services are started and the user inter
   ```
 * Ensure that the security server user interface at https://SECURITYSERVER:4000/ (**reference data: 1.8; 1.6**) can be opened in a Web browser. To log in, use the account name chosen during the installation (**reference data: 1.3**). While the user interface is still starting up, the Web browser may display a connection refused -error.
 
+<details>
+<summary>Click to toggle </summary>
+
 ### 2.10 Installing the Support for Hardware Tokens
 
 To configure support for hardware security tokens (smartcard, USB token, Hardware Security Module), act as follows.
@@ -429,6 +450,8 @@ Parameter   | Type    | Default Value | Explanation
 
 **Note 1:** Only parameter *library* is mandatory, all the others are optional.
 **Note 2:** The item separator of the type STRING LIST is ",".
+
+</details>
 
 ### 2.11 Installing the Support for Environmental Monitoring
 
