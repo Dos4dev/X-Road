@@ -38,6 +38,17 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
+
+Postgres client
+```
+sudo apt install postgresql-client-common
+sudo apt install postgresql-client -y
+```
+Install Security server
+```
+sudo apt istall xroad-securityserver-ee
+```
+
 * [ansible](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-18-04)
 ```
 sudo apt-add-repository ppa:ansible/ansible
