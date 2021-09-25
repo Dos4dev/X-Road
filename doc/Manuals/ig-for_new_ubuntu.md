@@ -46,7 +46,7 @@ sudo apt install postgresql-client -y
 ```
 Install Security server
 ```
-sudo apt istall xroad-securityserver-ee
+sudo apt install xroad-securityserver-ee -y
 ```
 
 * [ansible](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-18-04)
