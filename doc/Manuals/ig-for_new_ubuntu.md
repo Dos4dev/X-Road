@@ -32,13 +32,23 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 sudo systemctl status docker
 ```
+docker without sudo
+```aidl
+sudo usermod -aG docker ${USER}
+su - ${USER}
+id -nG
+```
 * [docker compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
-
+* python details
+```
+sudo apt install python3-pip
+pip install docker-py
+```
 Postgres client
 ```
 sudo apt install postgresql-client-common
@@ -55,7 +65,7 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
 sudo apt install ansible
 ```
-* [ansible](https://ubuntu.com/blog/installing-lxd-and-the-command-line-tool)
+* [lxd](https://ubuntu.com/blog/installing-lxd-and-the-command-line-tool)
 ```
 sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
 sudo apt update
