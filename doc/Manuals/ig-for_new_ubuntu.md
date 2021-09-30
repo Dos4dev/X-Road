@@ -79,7 +79,7 @@ almost all should be default [except](https://jointxroad.slack.com/archives/CA66
 
 ```Would you like LXD to be available over the network? (yes/no) [default=no]```
 
-This document is licensed under the MIT
+https://confluence.niis.org/pages/viewpage.action?pageId=6783483
 
 ![](img/addOCSPCert.png)
 [more info](https://youtu.be/JiTAFRPDUeQ?t=1413)
