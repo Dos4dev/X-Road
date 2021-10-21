@@ -238,10 +238,12 @@ This document is licensed under the Creative Commons Attribution-ShareAlike 3.0 
 **Member class** – identifier, that is identified by the X-Road governing authority and that uniquely identifies members with similar characteristics. All members with the same member class must be uniquely identifiable by their member codes.
 
 **Member code** – identifier, that uniquely identifies an X-Road member within its member class. The member code remains unchanged during the entire lifetime of the member.
+*For instance ID of a company, if company is foreigner need to use prefix like = NRTEE*
 
 **Member identifier** – identifier, that uniquely identifies a member in the X-Road Network. Member identifier consists of X-Road instance identifier, member class, and member code.
 
 **Security server code** – identifier, that uniquely identifies the security server in all of the security servers of the security server owner.
+*For instance IP address*
 
 **Security server identifier** – identifier, that uniquely identifies security server in X-road Network. The security server identifier consists of security server owner identifier and security server code.
 
