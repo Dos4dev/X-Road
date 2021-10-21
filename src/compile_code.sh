@@ -27,7 +27,6 @@ if [[ -n "$NODAEMON" ]]; then
     ARGUMENTS+=(--no-daemon)
 fi
 
-echo $ARGUMENTS
 ./gradlew "${ARGUMENTS[@]}"
 
 rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
