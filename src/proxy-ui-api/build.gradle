@@ -3,9 +3,9 @@ import org.niis.xroad.oasvalidatorplugin.Oas3ValidatorGradlePlugin
 buildscript {
     ext {
         openapiGeneratorVersion = '5.2.1'
-        nodePluginVersion = '2.2.4'
-        nodeVersion = '12.21.0'
-        swaggerParserVersion = '2.0.21'
+        nodePluginVersion = '3.1.1'
+        nodeVersion = '12.22.6'
+        swaggerParserVersion = '2.0.28'
     }
     repositories {
         mavenCentral()
@@ -20,7 +20,7 @@ plugins {
 }
 
 ext {
-    set('springCloudVersion', "2020.0.3")
+    set('springCloudVersion', "2020.0.4")
 }
 
 sourceSets {
@@ -189,7 +189,18 @@ if (!project.hasProperty("runHeadless")) {
     ext.runHeadless = ""
 }
 
+// TODO: rename these to "e2e"
+if (!project.hasProperty("testscript")) {
+    ext.testscript = ""
+}
 
+if (!project.hasProperty("testcase")) {
+    ext.testcase = ""
+}
+
+if (!project.hasProperty("testverbose")) {
+    ext.testverbose = ""
+}
 
 task e2eTest(type: NpmTask, dependsOn: 'npmInstall') {
 
@@ -207,16 +218,37 @@ task e2eTest(type: NpmTask, dependsOn: 'npmInstall') {
 
     args = ['run', 'test:e2e', '--', '--url=' + testTargetUrl, '--testdata=' + testDataUrl, '--tag=' + withTags, '--skiptags=' + withoutTags]
 
+    if (!testverbose.isEmpty()) {
+        if (testverbose == "true") {
+            args.add("--verbose")
+        }
+    }
+
     if (!runHeadless.isEmpty()) {
       if (runHeadless == "true") {
-        args += "--headless"
+          args.add("--headless")
       }
     }
 
     if (!failScreenshot.isEmpty()) {
       if (failScreenshot == "true") {
-        args += "--env screenshot"
+        args.add("--env screenshot")
       }
+    }
+
+    // (at least if testcase name has spaces) wrap name in quotes, e.g. -Ptestcase "Security server client add wsdl service"
+    if (!testcase.isEmpty()) {
+        if (testscript.isEmpty()) {
+            // to run specific testcase, your need to also define -Ptestscript, otherwise nightwatch ignores this parameter
+            throw new GradleException('Tried to use -Ptestcase without -Ptestscript, that will not work.')
+        }
+        args.add("--testcase=" + testcase);
+        println 'set testcase arg to value [' + testcase + ']'
+
+    }
+
+    if (!testscript.isEmpty()) {
+        args.add("--test=" + testscript)
     }
 
     execOverrides {
@@ -323,7 +355,7 @@ dependencies {
     implementation('org.kohsuke:libpam4j:1.11')
     implementation('org.apache.commons:commons-compress:1.21')
     implementation('wsdl4j:wsdl4j:1.6.3')
-    implementation('com.github.vladimir-bukhtoyarov:bucket4j-core:4.10.0')
+    implementation('com.github.vladimir-bukhtoyarov:bucket4j-core:6.3.0')
     implementation("io.swagger.parser.v3:swagger-parser-v3:${swaggerParserVersion}")
     implementation('io.swagger:swagger-annotations:1.6.2')
 
