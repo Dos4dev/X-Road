@@ -457,6 +457,19 @@ Parameter   | Type    | Default Value | Explanation
 
 The support for environmental monitoring functionality on a security server is provided by package xroad-monitor that is installed by default. The package installs and starts the `xroad-monitor` process that will gather and make available the monitoring information.
 
+### 2.12 Firewall configuration
+
+It would be good to read before starting to set a firewall:
+* [IptablesHowTo](https://help.ubuntu.com/community/IptablesHowTo)
+* [How To Set Up a Firewall Using Iptables on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04)
+
+`sudo iptables -A INPUT -p tcp --dport 4000 -s 127.127.127.127 -j ACCEPT`
+`sudo iptables -A INPUT -p tcp --dport 4000 -j DROP`
+
+Show iptables with numbers =  `sudo iptables -L --line-numbers`
+
+
+firewall logs = `sudo tail -f /var/log/ufw.log`
 ## 3 Security Server Initial Configuration
 
 During the security server initial configuration, the server’s X-Road membership information and the software token’s PIN are set.
