@@ -1,5 +1,6 @@
 <!--
    The MIT License
+
    Copyright (c) 2019- Nordic Institute for Interoperability Solutions (NIIS)
    Copyright (c) 2018 Estonian Information System Authority (RIA),
    Nordic Institute for Interoperability Solutions (NIIS), Population Register Centre (VRK)
@@ -24,69 +25,34 @@
    THE SOFTWARE.
  -->
 <template>
-  <v-layout class="main-content" align-left>
-    <app-icon />
-    <div class="tabs-wrap"></div>
-    <app-drop-menu />
-  </v-layout>
+  <div class="xrd-sub-view-outer-wrapper">
+    <v-container class="xrd-default-font-size mt-7">
+      <slot></slot>
+    </v-container>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { Tab } from '@/ui-types';
-import { RouteName } from '@/global';
-import AppIcon from './AppIcon.vue';
-import AppDropMenu from './AppDropMenu.vue';
 
-export default Vue.extend({
-  components: {
-    AppIcon,
-    AppDropMenu,
-  },
-  data() {
-    return {
-      tab: undefined as undefined | Tab,
-    };
-  },
-  methods: {
-    logout(): void {
-      this.$store.dispatch('logout');
-      this.$router.replace({ name: RouteName.Login });
-    },
-  },
-});
+/**
+ * View wrapper component for sub views. See Settings.vue for example
+ */
+export default Vue.extend({});
 </script>
 
-<style lang="scss">
-.v-tabs-slider.xrd-main-tabs-slider {
-  width: 70px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.v-tab {
-  text-transform: none;
-  font-weight: 600;
-}
-
-.v-tabs-slider.xrd-sub-tabs-slider {
-  width: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
 <style lang="scss" scoped>
-.main-content {
-  background-color: #ffffff;
-  height: 56px;
-  padding-left: 92px;
-  @media only screen and (max-width: 920px) {
-    padding-left: 0px;
-  }
+@import '../assets/colors';
+
+.xrd-sub-view-outer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.tabs-wrap {
-  margin-left: 20px;
+/* Use this to set up font etc. common things for normal views */
+.xrd-default-font-size {
+  font-size: $XRoad-DefaultFontSize;
 }
 </style>

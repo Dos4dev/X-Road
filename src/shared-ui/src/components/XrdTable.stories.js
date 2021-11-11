@@ -1,5 +1,6 @@
 /*
  * The MIT License
+ *
  * Copyright (c) 2019- Nordic Institute for Interoperability Solutions (NIIS)
  * Copyright (c) 2018 Estonian Information System Authority (RIA),
  * Nordic Institute for Interoperability Solutions (NIIS), Population Register Centre (VRK)
@@ -23,18 +24,44 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+import XrdTable from '@/components/XrdTable';
 
-// Variables
-$view-area-max-width: 1600px;
+export default {
+  title: 'X-Road/Table',
+  component: XrdTable,
+};
 
-.tab-max-width {
-  max-width: 850px;
-  width: 100%;
-}
+const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { XrdTable },
+  template: `
+    <xrd-table>
+      <thead>
+        <tr>
+          <th>
+            Header 1
+          </th>
+          <th>
+            Header 2
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Value 1
+          </td>
+          <td>
+            Value 2
+          </td>
+        </tr>
+        <tr data-test="netum">
+          <td>Value 3</td>
+          <td>Value 4</td>
+        </tr>
+      </tbody>
+    </xrd-table>
+  `,
+});
 
-.full-width-centered {
-  width: 100%;
-  max-width: $view-area-max-width;
-  display: flex;
-  justify-content: center;
-}
+export const table = Template.bind({});
