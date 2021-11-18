@@ -2770,3 +2770,5 @@ XROAD_PROXY_PARAM
 XROAD_PROXY_UI_API_PARAM
 XROAD_SIGNER_CONSOLE_PARAM
 ```
+backup
+`pg_dump -h localhost --create -s -U serverconf -d serverconf > serverconfdump.sql`
