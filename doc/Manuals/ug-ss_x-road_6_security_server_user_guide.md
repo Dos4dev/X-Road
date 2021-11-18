@@ -11,9 +11,8 @@ Doc. ID: UG-SS
 
 ---
 
-<details> 
-<summary> <span style = font-size:26px;"><b> Version history</b></span>
-</summary>
+
+## Version history <!-- omit in toc -->
 
  Date       | Version | Description                                                     | Author
  ---------- | ------- | --------------------------------------------------------------- | --------------------
@@ -98,7 +97,6 @@ Doc. ID: UG-SS
  13.09.2021 | 2.62    | Added a new chapter about custom command line arguments [21](#21-adding-command-line-arguments) | Caro Hautamäki
  22.09.2021 | 2.63    | Update backup encryption instructions | Jarkko Hyöty
  05.10.2021 | 2.64    | Moved the chapter about command line arguments to the system parameters document | Caro Hautamäki
-</details>
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -238,19 +236,12 @@ Doc. ID: UG-SS
 
 This document is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/
 
-<details>
-<summary> <span style = font-size:26px;">
-<b>1 Introduction</b>
-</span>
-</summary>
+## 1 Introduction
 
 This document describes the management and maintenance of an X-Road version 7 security server.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>1.1 The X-Road Security Server</b>
-</span>
-</summary> 
+
+### 1.1 The X-Road Security Server
 
 The main function of a security server is to mediate requests in a way that preserves their evidential value.
 
@@ -271,19 +262,12 @@ To increase the availability of the entire system, the service user's and servic
 -   If one of the service provider's security servers goes offline, the requests are automatically redirected to other available security servers.
 
 The security server also depends on a central server, which provides the global configuration.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>1.2 Terms and abbreviations</b>
-</span>
-</summary>
+
+### 1.2 Terms and abbreviations
 
 See X-Road terms and abbreviations documentation \[[TA-TERMS](#Ref_TERMS)\].
 
-</details> 
-<details> 
-<summary> <span style = font-size:18px;"><b> 1.3 References</b></span>
-</summary>
+### 1.3 References
 
 1.  <a id="Ref_ASiC" class="anchor"></a>\[ASiC\] ETSI TS 102 918, Electronic Signatures and Infrastructures (ESI); Associated Signature Containers (ASiC)
 
@@ -342,22 +326,12 @@ See X-Road terms and abbreviations documentation \[[TA-TERMS](#Ref_TERMS)\].
 24. <a id="Ref_GnuPG" class="anchor"></a>\[GnuPG\] The GNU Privacy Guard, <https://gnupg.org>.
 
 25. <a id="Ref_UG-SIGDOC" class="anchor"></a>\[UG-SIGDOC\] X-Road: Signed Document Download and Verification Manual. Document ID: [UG-SIGDOC](../Manuals/ug-sigdoc_x-road_signed_document_download_and_verification_manual.md).
-</details>
-</details>
 
 
-<details>
-<summary> <span style = font-size:26px;">
-<b> 2 User Management</b>
-</span>
-</summary>
+## 2 User Management
 
 
-<details> 
-<summary> <span style = font-size:18px;">
-<b>2.1 User Roles</b>
-</span>
-</summary>
+### 2.1 User Roles
 
 Security servers support the following user roles:
 
@@ -380,10 +354,7 @@ Henceforth each applicable section of the guide indicates, which user role is re
 If the logged-in user does not have a permission to carry out a particular task, the button that would initiate the action is hidden (and neither is it possible to run the task using its corresponding keyboard combinations or mouse actions). Only the permitted data and actions are visible and available to the user.
 
 
-</details> 
-<details> 
-<summary> <span style = font-size:18px;"><b> 2.2 Managing the Users</b></span>
-</summary>
+### 2.2 Managing the Users
 
 User management is carried out on command line in root user permissions.
 
@@ -409,11 +380,7 @@ To remove a user, enter:
 
     deluser username
 
-</details> 
-
-<details> 
-<summary> <span style = font-size:18px;"><b> 2.3 Managing API Keys</b></span>
-</summary>
+### 2.3 Managing API Keys
 
 API keys are used to authenticate API calls to Security Server's management REST API. API keys are associated with roles that define the permissions granted to the API key. If the API key is lost, it can be revoked.
 
@@ -460,25 +427,14 @@ API keys are used to authenticate API calls to Security Server's management REST
 2.  In the opening view, select **API KEYS** tab.
 
 3.  In the opening view, in the API key list, locate the API key you want to revoke and click **Revoke Key** at the end of the API key row. In the dialog that opens click **YES**.
-</details> 
-</details>
 
 
-<details> 
-<summary> <span style = font-size:26px;">
-<b> 3 Security Server Registration</b>
-</span>
-</summary>
+## 3 Security Server Registration
 
 To use a security server for mediating (exchanging) messages, the security server and its owner must be certified by a certification service provider approved by the X-Road governing authority, and the security server has to be registered in the X-Road governing authority.
 
 
-<details> 
-<summary> <span style = font-size:18px;">
-<b> 3.1 Configuring the Signing Key and Certificate for the Security Server Owner</b>
-</span>
-</summary>
-
+### 3.1 Configuring the Signing Key and Certificate for the Security Server Owner
 
 The signing keys used by the security servers for signing X-Road messages can be stored on software or hardware based (a Hardware Security Module or a smartcard) security tokens, according to the security policy of the X-Road instance.
 
@@ -486,11 +442,8 @@ Depending on the certification policy, the signing keys are generated either in 
 
 The **background colors** of the devices, keys and certificate are explained in Section [5.1](#51-availability-states-of-security-tokens-keys-and-certificates).
 
-<details> 
-<summary> <span style = font-size:14px;">
-<b> 3.1.1 Generating a Signing Key and Certificate Signing Request</b>
-</span>
-</summary>
+
+#### 3.1.1 Generating a Signing Key and Certificate Signing Request
 
 **Access rights:**
 
@@ -535,13 +488,9 @@ To generate a Signing key and a Certificate Signing Request, follow these steps.
 After the generation of the CSR, a "Request" record is added under the key's row in the table, indicating that a certificate signing request has been created for this key. The record is added even if the request file was not saved to the local file system.
 
 **To certify the signing key, transmit the certificate signing request to the approved certification service provider and accept the signing certificate created from the certificate signing request.**
-</details> 
 
-<details> 
-<summary> <span style = font-size:14px;">
-<b> 3.1.2 Importing a Certificate from the Local File System</b>
-</span>
-</summary>
+
+#### 3.1.2 Importing a Certificate from the Local File System
 
 **Access rights:** [Security Officer](#xroad-security-officer), [Registration Officer](#xroad-registration-officer)
 
@@ -554,13 +503,9 @@ To import the signing certificate to the security server, follow these steps.
 3.  Click **IMPORT CERT.**.
 
 4.  Locate the certificate file from the local file system and click **OK**. After importing the certificate, the "Request" record under the signing key's row is replaced with the information from the imported certificate. By default, the signing certificate is imported in the "Registered" state.
-</details> 
 
-<details>
-<summary> <span style = font-size:14px;">
-<b> 3.1.3 Importing a Certificate from a Security Token</b>
-</span>
-</summary>
+
+#### 3.1.3 Importing a Certificate from a Security Token
 
 **Access rights:** [Security Officer](#xroad-security-officer), [Registration Officer](#xroad-registration-officer)
 
@@ -575,23 +520,14 @@ To import a certificate from a security token, follow these steps.
 4.  To log in to the security token, click **LOG IN** on the token's row in the table and enter the PIN. Once the correct PIN is entered, the **LOG IN** button changes to **LOG OUT**.
 
 5.  Click the **Import** button on the row of the certificate. By default, the certificate is imported in the "Registered" state.
-</details> 
-</details> 
 
 
-<details>
-<summary> <span style = font-size:18px;">
-<b> 3.2 Configuring the Authentication Key and Certificate for the Security Server</b>
-</span>
-</summary>
+### 3.2 Configuring the Authentication Key and Certificate for the Security Server
 
 The **background colors** of the devices, keys and certificate are explained in Section [5.1](#51-availability-states-of-security-tokens-keys-and-certificates).
 
-<details>
-<summary> <span style = font-size:14px;">
-<b> 3.2.1 Generating an Authentication Key</b>
-</span>
-</summary>
+
+#### 3.2.1 Generating an Authentication Key
 
 **Access rights**
 
@@ -628,14 +564,9 @@ The **background colors** of the devices, keys and certificate are explained in 
        2. Click **GENERATE CSR**
     
        3. Click **DONE**
-</details>
 
 
-<details>
-<summary> <span style = font-size:14px;">
-<b> 3.2.2 Generating a Certificate Signing Request for an Authentication Key</b>
-</span>
-</summary> 
+#### 3.2.2 Generating a Certificate Signing Request for an Authentication Key
 
 **Access rights:** [Security Officer](#xroad-security-officer)
 
@@ -664,13 +595,9 @@ To generate a certificate signing request (CSR) for the authentication key, foll
 After the generation of the CSR, a "Request" record is added under the key's row in the table, indicating that a certificate signing request has been created for this key. The record is added even if the request file was not saved to the local file system.
 
 **To certify the authentication key, transmit the certificate signing request to the approved certification service provider and accept the authentication certificate created from the certificate signing request.**
-</details>
 
-<details>
-<summary> <span style = font-size:14px;">
-<b> 3.2.3 Importing an Authentication Certificate from the Local File System</b>
-</span>
-</summary> 
+
+#### 3.2.3 Importing an Authentication Certificate from the Local File System
 
 **Access rights:** [Security Officer](#xroad-security-officer)
 
@@ -683,14 +610,9 @@ To import the authentication certificate to the security server, follow these st
 3.  Click **Import certificate**.
 
 4.  Locate the certificate file from the local file system and click **OK**. After importing the certificate, the "Request" record under the authentication key's row is replaced with the information from the imported certificate. By default, the certificate is imported in the "Saved" (see Section [5.2.2](#522-registration-states-of-the-authentication-certificate)) and "Disabled" states (see Section [5.3](#53-validity-states-of-certificates)).
-</details>
-</details>
 
-<details>
-<summary> <span style = font-size:18px;">
-<b> 3.3 Registering the Security Server in the X-Road Governing Authority</b>
-</span>
-</summary> 
+
+### 3.3 Registering the Security Server in the X-Road Governing Authority
 
 To register the security server in the X-Road governing authority, the following actions must be completed.
 
@@ -700,11 +622,8 @@ To register the security server in the X-Road governing authority, the following
 
 -   The registration request must be approved by the X-Road governing authority.
 
-<details>
-<summary> <span style = font-size:14px;">
-<b>3.3.1 Registering an Authentication Certificate</b>
-</span>
-</summary>  
+
+#### 3.3.1 Registering an Authentication Certificate
 
 **Access rights:** [Security Officer](#xroad-security-officer)
 
@@ -723,14 +642,8 @@ To submit an authentication certificate registration request, follow these steps
 On submitting the request, the message "Certificate registration request successful" is displayed, and the authentication certificate's state is set to "Registration in process".
 
 After the X-Road governing authority has accepted the registration, the registration state of the authentication certificate is set to "Registered" and the registration process is completed.
-</details>
-</details>
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>3.4 Changing the Security Server Owner</b>
-</span>
-</summary>
+### 3.4 Changing the Security Server Owner
 
 **Access rights:** [Registration Officer](#xroad-registration-officer)
 
@@ -783,14 +696,8 @@ Once the owner change request is approved, the new member will be automatically 
 - Once the owner change request is approved by the X-Road governing authority, the member will automatically become the Owner Member.
 
 - New Authentication Key and Certificate should be configured for the new security server owner (see [3.2](#32-configuring-the-authentication-key-and-certificate-for-the-security-server)).
-</details> 
-</details> 
 
-<details>
-<summary> <span style = font-size:26px;">
-<b>4 Security Server Clients</b>
-</span>
-</summary>
+## 4 Security Server Clients
 
 **Important: to use or provide X-Road services, a security server client needs to be certified by a certification service provider approved by the X-Road governing authority, and the association between the client and the security server used by the client must be registered at the X-Road governing authority.**
 
@@ -799,11 +706,7 @@ Once the owner change request is approved, the new member will be automatically 
 The registration of the security server's owner does not extend to the owner's subsystems. The subsystems must be registered as individual clients.
 
 
-<details> 
-<summary> <span style = font-size:18px;">
-<b>4.1 Security Server Client States</b>
-</span>
-</summary>
+### 4.1 Security Server Client States
 
 The security server distinguishes between the following client states.
 
@@ -837,12 +740,8 @@ The security server distinguishes between the following client states.
 
 **Deleted** – the client's information has been deleted from the security server's configuration.
 
-</details> 
-<details> 
-<summary> <span style = font-size:18px;">
-<b>4.2 Adding a Security Server Client</b>
-</span>
-</summary>
+
+### 4.2 Adding a Security Server Client
 
 **Access rights:** [Registration Officer](#xroad-registration-officer)
 
@@ -866,12 +765,7 @@ Follow these steps.
 
 The new client is added to the list of security server clients in the "Saved" state.
 
-</details> 
-<details> 
-<summary> <span style = font-size:18px;">
-<b>4.3 Adding a Security Server Member Subsystem</b>
-</span>
-</summary>
+### 4.3 Adding a Security Server Member Subsystem
 
 **Access rights:** [Registration Officer](#xroad-registration-officer)
 
@@ -889,12 +783,7 @@ Follow these steps.
     
 The new subsystem is added to the list of security server clients in the "Saved" state.
 
-</details> 
-<details> 
-<summary> <span style = font-size:18px;">
-<b>4.4 Configuring a Signing Key and Certificate for a Security Server Client</b>
-</span>
-</summary>
+### 4.4 Configuring a Signing Key and Certificate for a Security Server Client
 
 A signing key and certificate must be configured for the security server client to sign messages exchanged over the X-Road. In addition, a signing key and certificate are required for registering a security server client.
 
@@ -904,12 +793,8 @@ All particular X-Road member's subsystems that are registered in the same securi
 
 The process of configuring the signing key and certificate for a security server client is the same as for the security server owner. The process is described in Section [3.1](#31-configuring-the-signing-key-and-certificate-for-the-security-server-owner).
 
-</details> 
-<details> 
-<summary> <span style = font-size:18px;">
-<b>4.5 Registering a Security Server Client in the X-Road Governing Authority</b>
-</span>
-</summary>
+
+### 4.5 Registering a Security Server Client in the X-Road Governing Authority
 
 To register a security server client in the X-Road governing authority, the following actions must be completed.
 
@@ -922,11 +807,7 @@ To register a security server client in the X-Road governing authority, the foll
 -   The registration request must be approved by the X-Road governing authority.
 
 
-<details> 
-<summary> <span style = font-size:14px;">
-<b>4.5.1 Registering a Security Server Client</b>
-</span>
-</summary>
+#### 4.5.1 Registering a Security Server Client
 
 **Access rights:** [Registration Officer](#xroad-registration-officer)
 
@@ -942,13 +823,8 @@ On submitting the request, the message "Request sent" is displayed, and the clie
 
 After the X-Road governing authority has accepted the registration, the state of the client is set to "Registered" and the registration process is completed.
 
-</details> 
-</details> 
-<details> 
-<summary> <span style = font-size:18px;">
-<b>4.6 Deleting a Client from the Security Server</b>
-</span>
-</summary>
+
+### 4.6 Deleting a Client from the Security Server
 
 If a client is deleted from the security server, all the information related to the client is deleted from the server as well – that is, the WSDLs, services, access rights, and, if necessary, the certificates.
 
@@ -956,11 +832,8 @@ When one of the clients is deleted, it is not advisable to delete the signing ce
 
 A client registered or submitted for registration in the X-Road governing authority (indicated by the "Registered" or "Registration in progress" state) must be unregistered before it can be deleted. The unregistering event sends a security server client deletion request from the security server to the central server.
 
-<details> 
-<summary> <span style = font-size:14px;">
-<b>4.6.1 Unregistering a Client</b>
-</span>
-</summary>
+
+#### 4.6.1 Unregistering a Client
 
 **Access rights:** [Registration Officer](#xroad-registration-officer)
 
@@ -974,12 +847,8 @@ To unregister a client, follow these steps.
 
 *Note:* It is possible to unregister a registered client from the central server without sending a deletion request through the security server. In this case, the security server's administrator responsible for the client must transmit a request containing information about the client to be unregistered to the central server's administrator. If the client has been deleted from the central server without a prior deletion request from the security server, the client is shown in the "Global error" state in the security server.
 
-</details> 
-<details> 
-<summary> <span style = font-size:14px;">
-<b>4.6.2 Deleting a Client</b>
-</span>
-</summary>
+
+#### 4.6.2 Deleting a Client
 
 **Access rights:** [Registration Officer](#xroad-registration-officer)
 
@@ -990,20 +859,12 @@ To delete a client, follow these steps.
 1.  In the **CLIENTS** view click the name of the client you wish to remove from the security server.
 
 2.  In the window that opens, click **DELETE** and then click **YES**. If there are no users for the signature key nor for the certificate associated then an option is presented to delete the client's certificates. To delete the certificates, click **YES** again.
-</details>
-</details>
 
-<details>
-<summary> <span style = font-size:26px;">
-<b>5 Security Tokens, Keys, and Certificates</b>
-</span>
-</summary>
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>5.1 Availability States of Security Tokens</b>
-</span>
-</summary>
+## 5 Security Tokens, Keys, and Certificates
+
+
+### 5.1 Availability States of Security Tokens
 
 **Notice that the colors were introduced in version 6.25.0**
 
@@ -1021,21 +882,13 @@ To display the availability of tokens, the following colors and labels are used 
 
 **Caution:** The key device's and key's information is automatically saved to the configuration when a certificate associated with either of them is imported to the security server, or when a certificate signing request is generated for the key. Similarly, the key device's and key's information is deleted from the security server configuration automatically upon the deletion of the last associated certificate and/or certificate signing request.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>5.2 Registration States of Certificates</b>
-</span>
-</summary> 
+
+### 5.2 Registration States of Certificates
 
 Registration states indicate if and how a certificate can be used in the X-Road system. In the "Keys and Certificates" view, a certificate's registration states (except "Deleted"  for certificates stored on soft token key) are displayed in the "Status" column.
 
 
-<details>
-<summary> <span style = font-size:14px;">
-<b>5.2.1 Registration States of the Signing Certificate</b>
-</span>
-</summary> 
+#### 5.2.1 Registration States of the Signing Certificate
 
 A security server signing certificate can be in one of the following registration states.
 
@@ -1044,12 +897,7 @@ A security server signing certificate can be in one of the following registratio
 -   **Deleted** – the certificate has been deleted from the server configuration. If the certificate is in the "Deleted" state and stored on a soft token key, the certificate will not be displayed in the table. If the certificate is in the "Deleted" state and stored on a hardware key device connected to the security server, the certificate status will be displayed with a **red circle** and a text **ONLY IN TOKEN**.
 
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>5.2.2 Registration States of the Authentication Certificate</b>
-</span>
-</summary>
+#### 5.2.2 Registration States of the Authentication Certificate
 
 A security server authentication certificate can be in one of the following registration states.
 
@@ -1079,13 +927,8 @@ A security server authentication certificate can be in one of the following regi
 
 **Deletion in progress** – an authentication certificate registration request has been created for the certificate and sent to the central server. From this state, the certificate can be deleted. If the certificate has been deleted from the security server configuration, it will not be displayed in the table anymore.
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>5.3 Validity States of Certificates</b>
-</span>
-</summary>
+
+### 5.3 Validity States of Certificates
 
 Validity states indicate if and how a certificate can be used independent of the X-Road system. In the "Keys and Certificates" view, the certificate's validity states are displayed in the "OCSP" column. Validity states (except "Disabled") are displayed for certificates that are in the "Registered" registration state.
 
@@ -1103,12 +946,8 @@ A security server certificate can be in one of the following validity states.
 
 -   **Disabled** – the user has marked the certificate as disabled. The certificate is not active and OCSP queries are not performed about it.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>5.4 Activating and Disabling the Certificates</b>
-</span>
-</summary>
+
+### 5.4 Activating and Disabling the Certificates
 
 **Access rights**
 
@@ -1128,12 +967,8 @@ To activate or disable a certificate, follow these steps.
 
     3.1 In the opening **Certificate** dialog, click **Activate**. To deactivate a certificate, click **DISABLE** in the **Certificate** dialog. 
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>5.5 Configuring and Registering an Authentication key and Certificate</b>
-</span>
-</summary>
+
+### 5.5 Configuring and Registering an Authentication key and Certificate
 
 A Security server can have multiple authentication keys and certificates (e.g., during authentication key change).
 
@@ -1141,20 +976,13 @@ The process of configuring another authentication key and certificate is describ
 
 The process of registering an authentication certificate is described in Section [3.3.1](#331-registering-an-authentication-certificate).
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>5.6 Deleting a Certificate</b>
-</span>
-</summary>
+
+### 5.6 Deleting a Certificate
 
 An authentication certificate registered or submitted for registration in the X-Road governing authority (indicated by the "Registered" or "Registration in progress" state) must be unregistered before it can be deleted. The unregistering event sends an authentication certificate deletion request from the security server to the central server.
 
-<details>
-<summary> <span style = font-size:14px;">
-<b>5.6.1 Unregistering an Authentication Certificate</b>
-</span>
-</summary>
+
+#### 5.6.1 Unregistering an Authentication Certificate
 
 **Access rights:** [Security Officer](#xroad-security-officer)
 
@@ -1172,12 +1000,8 @@ To unregister an authentication certificate, follow these steps.
 
 A registered authentication certificate can be deleted from the central server without sending a deletion request through the security server. In this case, the security server's administrator must transmit a request containing information about the authentication certificate to be deleted to the central server's administrator. If the authentication certificate has been deleted from the central server without a deletion request from the security server, the certificate is shown in the "Global error" state in the security server.
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>5.6.2 Deleting a Certificate or a certificate Signing Request notice</b>
-</span>
-</summary>
+
+#### 5.6.2 Deleting a Certificate or a certificate Signing Request notice
 
 **Access rights**
 
@@ -1211,13 +1035,7 @@ An authentication certificate saved in the system configuration can be deleted i
 
 3.  At the end of the desired CSR row click **Delete CSR**. Confirm the deletion by clicking **YES**.
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>5.7 Deleting a Key</b>
-</span>
-</summary>
+### 5.7 Deleting a Key
 
 **Warning:** Deleting a key from the server configuration also deletes all certificates (and certificate signing request notices) associated with the key.
 
@@ -1238,14 +1056,9 @@ To delete a key, follow these steps.
 3.  Click on the desired Key.
 
     3.1 In the opening **Key** dialog, click **DELETE**. Confirm the deletion of the key (and its associated certificates) by clicking **YES**.
-</details>
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>6 X-Road Services</b>
-</span>
-</summary>
+
+
+## 6 X-Road Services
 
 X-Road supports both SOAP and REST services. The services are managed on two levels:
 
@@ -1253,11 +1066,8 @@ X-Road supports both SOAP and REST services. The services are managed on two lev
 
 -   the service address, internal network connection method, and the service timeout values are configured at the service level for SOAP services and at the API level for REST / OpenAPI 3 services. In addition, for SOAP / WSDL, it is easy to extend the configuration of one service to all the other services.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>6.1 Adding a service description</b>
-</span>
-</summary>
+
+### 6.1 Adding a service description
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 <details>
@@ -1277,12 +1087,8 @@ When a new WSDL file is added, the security server reads service information fro
 **To see a list of services contained in the WSDL**
 
 -   click the caret next to the WSDL service url to expand the list.
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>6.1.2 REST</b>
-</span>
-</summary>
+
+#### 6.1.2 REST
 
 After a new REST service is added, the security server displays text "REST" and url for that service.
 
@@ -1297,13 +1103,8 @@ After a new REST service is added, the security server displays text "REST" and 
 **To see the service details under the REST service**
 
 -   click the caret on the REST service description row to expand the service details.
-</details>
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>6.2 Refreshing a service description</b>
-</span>
-</summary>
+
+### 6.2 Refreshing a service description
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1319,12 +1120,8 @@ To refresh the service description, follow these steps.
 
 When the service description is refreshed, the existing services' settings are not overwritten.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>6.3 Enabling and Disabling a service description</b>
-</span>
-</summary>
+
+### 6.3 Enabling and Disabling a service description
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1342,12 +1139,8 @@ To **enable** or **disable** a service description, follow these steps.
 
 (3.) If the service was disabled a popup will appear. In the popup, enter a Disable notice which is shown to clients who try to access any of the services in the service description, and click **OK**.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>6.4 Changing the Address of a service description</b>
-</span>
-</summary>
+
+### 6.4 Changing the Address of a service description
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1359,12 +1152,8 @@ To change the service description address, follow these steps.
 
 3.  In the dialog that opens you can edit the URL for all types of services and for REST services the service code can also be changed. Click **SAVE**. The service information updates accordingly (see section [6.2](#62-refreshing-a-service-description)).
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>6.5 Deleting a service description</b>
-</span>
-</summary>
+
+### 6.5 Deleting a service description
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1377,12 +1166,8 @@ To delete a service description, follow these steps.
 2. Click the link text containing the type of the service and its url in paranthesis. 
 
 3. Click **DELETE** and confirm the deletion by clicking **YES** in the dialog that opens. 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>6.6 Changing the Parameters of a Service</b>
-</span>
-</summary>
+
+### 6.6 Changing the Parameters of a Service
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1404,12 +1189,8 @@ To change service parameters, follow these steps.
 
 3.  In the view that opens, configure the service parameters. To apply the selected parameter to all services described in the same service description, select the checkbox adjacent to this parameter in the **Apply to All in WSDL** column. To apply the configured parameters, click **SAVE**.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>6.7 Managing REST Endpoints</b>
-</span>
-</summary>
+
+### 6.7 Managing REST Endpoints
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1426,13 +1207,9 @@ To create API endpoint manually, follow these steps
 3.  Click the **ENDPOINTS** tab and in the following view click **ADD ENDPOINTS**.
 
 4.  In the dialog that opens fill in the HTTP Request method and path for the endpoint and click **ADD**
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>7 Access Rights</b>
-</span>
-</summary> 
+
+
+## 7 Access Rights
 
 Access rights can be granted to the following access right subjects.
 
@@ -1455,11 +1232,8 @@ It is possible to define access rights on two levels for REST services:
 
 In general, a REST service usually has multiple endpoints. When access rights are defined on the service level, they apply to all the endpoints of the REST service. Instead, defining access rights on the endpoint level gives access to specific endpoint(s) only. The service level access rights support both service-based and service client-based access rights management. The endpoint level access rights support only service based access rights management.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>7.1 Changing the Access Rights of a Service</b>
-</span>
-</summary>
+
+### 7.1 Changing the Access Rights of a Service
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1487,12 +1261,8 @@ To change access rights to an **endpoint**, follow there steps.
 
 5. To remove endpoint access rights subjects, click **Remove** button on the respective row in the access rights table and click **YES** in the confirmation dialog. To clear the access rights list (that is, remove all subjects), click **REMOVE ALL** and click **YES** in the confirmation dialog.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>7.2 Adding a Service Client</b>
-</span>
-</summary>
+
+### 7.2 Adding a Service Client
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1510,12 +1280,8 @@ To add a service client, follow these steps.
 
 The subject is added to the list of service clients, after which the service clients view is displayed.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>7.3 Changing the Access Rights of a Service Client</b>
-</span>
-</summary>
+
+### 7.3 Changing the Access Rights of a Service Client
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1535,22 +1301,13 @@ To change the service client's access rights, follow these steps.
     
     - Removing service level access rights from the service client also removes all REST API endpoint level access rights to the endpoints of the service. In other words, removing access rights from the service client removes all access rights to a service and its endpoints.
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>8 Local Access Right Groups</b>
-</span>
-</summary>
+
+## 8 Local Access Right Groups
 
 A local access rights group can be created for a security server client in order to facilitate the management of service access rights for a group of X-Road subsystems that use the same services. The access rights granted for a group apply for all the members of the group. Local groups are client-based, that is, a local group can only be used to manage the service access rights of one security server client in one security server.
 
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>8.1 Adding a Local Group</b>
-</span>
-</summary>
+### 8.1 Adding a Local Group
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1560,12 +1317,8 @@ To create a local group for a security server client, follow these steps.
 
 2.  To create a new group, click **ADD GROUP**. In the view that opens, enter the code and description for the new group and click **ADD**.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>8.2 Displaying and Changing the Members of a Local Group</b>
-</span>
-</summary>
+
+### 8.2 Displaying and Changing the Members of a Local Group
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1583,12 +1336,8 @@ To **add one or more members** to a local group, follow these steps in the group
 
 To **remove members** from a local group, click **Remove** on the corresponding row on group you wish to be deleted in the group's detail view and then click **YES** in the confirmation dialog. To remove all group members from the group, click **REMOVE ALL** and then click **YES** in the confirmation dialog.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>8.3 Changing the description of a Local Group</b>
-</span>
-</summary>
+
+### 8.3 Changing the description of a Local Group
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1600,12 +1349,8 @@ To change the description of a local group, follow these steps.
 
 3.  In the group´s detail view change the description. The description is saved when the input field loses focus. 
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>8.4 Deleting a Local Group</b>
-</span>
-</summary>
+
+### 8.4 Deleting a Local Group
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
 
@@ -1619,13 +1364,8 @@ To delete a local group, follow these steps.
 
 3.  In the group detail view, click **DELETE** and confirm the deletion by clicking **YES** in the dialog that opens.
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>9 Communication with the Client Information Systems</b>
-</span>
-</summary>
+
+## 9 Communication with the Client Information Systems
 
 **Access rights:** [Registration Officer](#xroad-registration-officer), [Service Administrator](#xroad-service-administrator)
 
@@ -1706,12 +1446,8 @@ To export the security server's internal TLS certificate, follow these steps.
 
 2.  Click **Export** at the end of a certificate row in the "Security Server certificate" table and save the prompted file to the local file system.
 
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>10 System Parameters</b>
-</span>
-</summary>
+
+## 10 System Parameters
 
 The security server system parameters are:
 
@@ -1723,11 +1459,8 @@ The security server system parameters are:
 
 -   **The internal TLS key and certificate.** The internal TLS certificate is used to establish a TLS connection with the security server client's information system if the "HTTPS" connection method is chosen for the client's servers.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>10.1 Managing the Configuration Anchor</b>
-</span>
-</summary>
+
+### 10.1 Managing the Configuration Anchor
 
 **Access rights**
 
@@ -1755,12 +1488,8 @@ To download the configuration anchor, follow these steps.
 
 3.  On the **Configuration Anchor** section, click **DOWNLOAD** and save the prompted file.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>10.2 Managing the Timestamping Services</b>
-</span>
-</summary>
+
+### 10.2 Managing the Timestamping Services
 
 **Access rights:** [Security Officer](#xroad-security-officer)
 
@@ -1784,12 +1513,8 @@ To delete a timestamping service, follow these steps.
 
 *Note*: If more than one timestamping service is configured, the security server will try to get a timestamp from the topmost service in the table, moving down to the next service if the try was unsuccessful. The failover covers both connection and timestamp response verification issues. For example, security server is not able to establish a connection to a timestamping service because of a misconfigured firewall, or verification of a timestamp response fails because of the sign certificate of the timestamping service is changed.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>10.3 Changing the Internal TLS Key and Certificate</b>
-</span>
-</summary>
+
+### 10.3 Changing the Internal TLS Key and Certificate
 
 **Access rights:** [Security Officer](#xroad-security-officer), [System Administrator](#xroad-system-administrator)
 
@@ -1842,12 +1567,8 @@ _To view the detailed information of the security server's internal TLS certific
 2. In the opening view, select **SECURITY SERVER TLS KEY** tab
 
 3. In the "TLS Key and Certificate" section, click on the certificate hash.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>10.4 Approved Certificate Authorities</b>
-</span>
-</summary>
+
+### 10.4 Approved Certificate Authorities
 
 _To list the approved certificate authorities_, follow these steps.
 
@@ -1862,13 +1583,8 @@ Lists approved certificate authorities. The listing contains the following infor
   * Disabled status is not used
   * Additional status "not available" if the OCSP response is not available at all, e.g. due to an error.
 * Certificate expiration date.
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>11 Message Log</b>
-</span>
-</summary>
+
+## 11 Message Log
 
 The purpose of the message log is to provide means to prove the reception of a regular request or response message to a third party. The security server supports three options for configuring message log:
 
@@ -1890,11 +1606,8 @@ In case of synchronous timestamping, the timestamping is an integral part of the
 In case of asynchronous timestamping, all the messages (maximum limit is determined in the configuration, see [11.1.4 Timestamping Parameters](#1114-timestamping-parameters)) stored in the message log since the last periodical timestamping event are timestamped with a single (batch) timestamp. By default, the security server uses asynchronous timestamping for better performance and availability.
 
 The security server periodically composes signed (and timestamped) documents from the (optionally encrypted) message log data and archives them in the local file system. Archive files are ZIP containers containing one or more signed documents and a special linking information file for additional integrity verification purpose. Message log archive encryption and grouping can be enabled and configured separately. By default, both are disabled. Message grouping can be configured by member or subsystem. By default, all archive files go to the same default group. Grouping and encryption are enabled/disabled on a security server level - they are either enabled or disabled for all the members and subsystems. It's not possible to enable/disable neither of them for selected members or subsystems only.
-<details>
-<summary> <span style = font-size:18px;">
-<b>11.1 Changing the Configuration of the Message Log</b>
-</span>
-</summary>
+
+### 11.1 Changing the Configuration of the Message Log
 
 Configuration parameters are defined in INI files \[[INI](#Ref_INI)\], where each section contains the parameters for a particular security server component. The default message log configuration is located in the file
 
@@ -1912,19 +1625,12 @@ For example, to configure the parameters `archive-path` and `archive-max-filesiz
     archive-path=/my/archive/path/
     archive-max-filesize=67108864
 
-<details>
-<summary> <span style = font-size:14px;">
-<b>11.1.1 Common Parameters</b>
-</span>
-</summary>
+
+#### 11.1.1 Common Parameters
 
 1.  `hash-algo-id` – the hash algorithm that is used for hashing in the message log. Possible choices are `SHA-256`, `SHA-384`, `SHA-512`. Defaults to `SHA-512`.
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>11.1.2 Logging Parameters</b>
-</span>
-</summary>
+
+#### 11.1.2 Logging Parameters
 
 1.  `message-body-logging` - if set to true, the messages are logged in their original form. If false, the message body is emptied of its contents.
 
@@ -1948,12 +1654,8 @@ For example, to configure the parameters `archive-path` and `archive-max-filesiz
 
 11.  `messagelog-key-id` - messagelog keystore key id
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>11.1.3 Messagelog Encryption</b>
-</span>
-</summary>
+
+#### 11.1.3 Messagelog Encryption
 
 The message bodies can be encrypted (`messagelog-encryption-enabled = true`) when stored to the database. The encryption is symmetric, the used cipher is AES-CTR, and the encryption is performed using Java code.
 
@@ -1979,12 +1681,8 @@ Finally, restart `xroad-proxy` service.
 
 To view the encrypted messages at some later stage, use the ASIC web service documented in \[[UG-SIGDOC](#Ref_UG-SIGDOC)\]. The web service performs automatic decryption, where needed.
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>11.1.4 Timestamping Parameters</b>
-</span>
-</summary>
+
+#### 11.1.4 Timestamping Parameters
 
 1.  `timestamp-immediately` – if set to true, the timestamps are created synchronously with the message exchange, i.e., one timestamp is created for a request and another for a response. This is a security policy to guarantee the timestamp at the time of logging the message, but if the timestamping fails, the message exchange fails as well, and if load to the security server increases, then the load to the timestamping service increases as well. The value of this parameter defaults to false for better performance and availability. In case the value of the parameter is false then the timestamping is performed as a periodic background process (the time period is determined in the X-Road governing agency and propagated to the security servers by global configuration) and signatures stored during the time period (see parameter `timestamp-records-limit`) are timestamped in one batch.
 
@@ -1993,12 +1691,7 @@ To view the encrypted messages at some later stage, use the ASIC web service doc
 3.  `acceptable-timestamp-failure-period` – time period in seconds, for how long the asynchronous timestamping is allowed to fail before message exchange between security servers is stopped. Set to `0` to disable this check. Defaults to `14400`.
 
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>11.1.5 Archiving Parameters</b>
-</span>
-</summary>
+#### 11.1.5 Archiving Parameters
 
 1. `keep-records-for` – time in days for which to keep timestamped and archived records in the database. Defaults to `30`.
 2. `archive-max-filesize` – maximum size for archived files in bytes. Reaching the maximum value triggers the file rotation. Defaults to `33554432` (32 MB).
@@ -2012,12 +1705,8 @@ To view the encrypted messages at some later stage, use the ASIC web service doc
 10. `archive-encryption-keys-config` - Configuration file for member gpg keys.
 11. `archive-default-encryption-key` - Default archive encryption key id.
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>11.1.6 Archive Files</b>
-</span>
-</summary>
+
+#### 11.1.6 Archive Files
 
 Archive files (ZIP containers) are located in the directory specified by the configuration parameter `archive-path`. File names are in the format `mlog[-grouping]-X-Y-Z.zip[.gpg]`, where X is the timestamp (UTC time in the format `YYYYMMDDHHmmss`) of the first message log record, Y is the timestamp of the last message log record (records are processed in chronological order) and Z is the first 16 characters of the last linking info digest entry. If grouping is enabled, [-grouping] is a (possibly truncated and filename safe) member identifier. If encryption is enabled, the `[.gpg]` suffix is added. Creating archive files is deterministic -- given the same input (grouping, message records, previous archive linking info digest), the output (file name and contents) is the same after possible encryption is removed.
 
@@ -2038,12 +1727,8 @@ Finally, switching to archive grouping by subsystem gives:
     mlog-INSTANCE_CLASS_CODE_CONSUMERSUBSYSTEM-20210901102521-20210901102524-95b1f27097524105.zip.gpg
     mlog-INSTANCE_CLASS_CODE_PROVIDERSUBSYSTEM-20210901102521-20210901102524-b1f27097524105ac.zip.gpg
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>11.1.7 Archive Encryption and Grouping</b>
-</span>
-</summary>
+
+#### 11.1.7 Archive Encryption and Grouping
 
 Archive files can be encrypted (when `archive-encryption-enabled = true`) using GnuPG ("gpg") which implements the OpenPGP (RFC 4880) specification. Please see e.g. [RFC 4880](https://www.ietf.org/rfc/rfc4880.txt) and [GnuPG](https://gnupg.org/) for more infomation. The encryption is enabled/disabled on a security server level - it's not possible to enable/disable it for specific subsystems only.
 
@@ -2095,13 +1780,7 @@ To decrypt the encrypted archives, use the following syntax:
 gpg [--homedir <gpghome>] --decrypt <archive name> --output <output file name>
 ```
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>11.2 Transferring the Archive Files from the Security Server</b>
-</span>
-</summary> 
+### 11.2 Transferring the Archive Files from the Security Server
 
 In order to save hard disk space, it is recommended to transfer archive files periodically from the security server (manually or automatically) to an external location.
 
@@ -2127,12 +1806,8 @@ Override the configuration parameter archive-transfer-command (create or edit th
 
 The message log package contains the CGI script `/usr/share/doc/xroad-addon-messagelog/archive-server/demo-upload.pl` for a demo archiving server for the purpose of testing or development.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>11.3 Using a Remote Database</b>
-</span>
-</summary>
+
+### 11.3 Using a Remote Database
 
 The message log database can be located outside of the security server. The following guide describes how to configure and populate a remote database schema for the message log. It is assumed that access to the database from the security server has been configured. For detailed information about the configuration of database connections, refer to \[[JDBC](#Ref_JDBC)\].
 
@@ -2174,13 +1849,8 @@ The message log database can be located outside of the security server. The foll
     RHEL: `yum reinstall xroad-addon-messagelog`
 
     `service xroad-proxy start`
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>12 Audit Log</b>
-</span>
-</summary>
+
+## 12 Audit Log
 
 The security server keeps an audit log. The audit log events are generated by the user interface when the user changes the system's state or configuration. The user actions are logged regardless of whether the outcome was a success or a failure. The complete list of the audit log events is described in \[[SPEC-AL](#Ref_SPEC-AL)\].
 
@@ -2221,11 +1891,8 @@ By default, audit log is located in the file
 
     /var/log/xroad/audit.log
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>12.1 Changing the Configuration of the Audit Log</b>
-</span>
-</summary>
+
+### 12.1 Changing the Configuration of the Audit Log
 
 The X-Road software writes the audit log to the *syslog* (*rsyslog*) using UDP interface (default port is 514). Corresponding configuration is located in the file
 
@@ -2247,24 +1914,15 @@ The audit log is rotated monthly by *logrotate*. To configure the audit log rota
 
     /etc/logrotate.d/xroad-proxy
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>12.2 Archiving the Audit Log</b>
-</span>
-</summary>
+
+### 12.2 Archiving the Audit Log
 
 In order to save hard disk space and avoid loss of the audit log records during security server crash, it is recommended to archive the audit log files periodically to an external storage or a log server.
 
 The X-Road software does not offer special tools for archiving the audit log. The `rsyslog` can be configured to redirect the audit log to an external location.
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>13 Back up and restore</b>
-</span>
-</summary>
+
+## 13 Back up and restore
 
 It is possible to back up and later restore security server configuration. A backup archive file contains the
 following configuration:
@@ -2291,11 +1949,7 @@ Security server backups are signed and optionally encrypted. The GNU Privacy Gua
 Security server's backup encryption key is generated during security server initialisation. In addition to the
 automatically generated backup encryption key, additional public keys can be used to encrypt backups.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>13.1 Back up and Restore in the User Interface</b>
-</span>
-</summary>
+### 13.1 Back up and Restore in the User Interface
 
 **Access rights:** [System Administrator](#xroad-system-administrator)
 
@@ -2328,12 +1982,8 @@ that only files signed with current security server encryption key can be restor
 can be restored only from command line.
 
 As long as original keypair is intact no additional steps are needed even when backup encryption is turned on.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>13.2 Restore from the Command Line</b>
-</span>
-</summary>
+
+### 13.2 Restore from the Command Line
 
 To restore configuration from the command line, the following data must be available:
 
@@ -2373,22 +2023,14 @@ of the restore command can be used with the –F option together with unencrypte
 
 In case backup archives were encrypted they have to be first unencrypted in external safe environment and then securely
 transported to security server filesystem.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>13.3 Automatic Backups</b>
-</span>
-</summary>
+
+### 13.3 Automatic Backups
 
 By default the Security Server backs up its configuration automatically once every day. Backups older than 30 days are
 automatically removed from the server. If needed, the automatic backup policies can be adjusted by editing the
 `/etc/cron.d/xroad-proxy` file.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>13.4 Backup Encryption Configuration</b>
-</span>
-</summary>
+
+### 13.4 Backup Encryption Configuration
 
 Backups are always signed, but backup encryption is initially turned off. To turn encryption on, please override the
 default configuration in the file `/etc/xroad/conf.d/local.ini`, in the `[proxy]` section (add or edit this section).
@@ -2415,12 +2057,8 @@ Resulting file `backupadmin.publickey` should be moved to security server and im
 
 Private keys corresponding to additional backup encryption public keys must be handled safely and kept in secret. Any of
 them can be used to decrypt backups and thus mount attacks on the security servers.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>13.5 Verifying Backup Archive Consistency</b>
-</span>
-</summary>
+
+### 13.5 Verifying Backup Archive Consistency
 
 During restore security server verifies consistency of backup archives automatically, archives are not checked during upload.
 Also, it is possible to verify the consistency of the archives externally. For verifying the consistency externally,
@@ -2442,19 +2080,11 @@ for example, `AA/GOV/TS1OWNER/TS1`.
 
 Resulting file (`server-public-key.gpg`) should then be exported from security server and imported to GPG keystore used
 for backup archive consistency verification.
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>14 Diagnostics</b>
-</span>
-</summary>
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>14.1 Examine security server services status information</b>
-</span>
-</summary>
+## 14 Diagnostics
+
+
+### 14.1 Examine security server services status information
 
 **Access rights:** [System Administrator](#xroad-system-administrator)
 
@@ -2479,13 +2109,7 @@ The status message offers more detailed information on the current status.
 
 If a section of the diagnostics view appears empty, it means that there either is no configured service available or that checking the service status has failed. If sections are empty, try refreshing the diagnostics view or check the service configuration.
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>15 Operational Monitoring</b>
-</span>
-</summary>
+## 15 Operational Monitoring
 
 **Operational monitoring data** contains data about request exchange (such as the ID-s of the client and the service, various attributes of the message read from the message header, request and response timestamps, SOAP sizes etc.) of the X-Road security server(s).
 
@@ -2499,11 +2123,8 @@ The owner of the security server and the central monitoring client are able to q
 
 **NOTE:** All the commands in the following sections must be carried out using root permissions.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>15.1 Operational Monitoring Buffer</b>
-</span>
-</summary>
+
+### 15.1 Operational Monitoring Buffer
 
 In general, the operational monitoring buffer is an internal component of the security server and thus being not directly used by the end user.
 
@@ -2513,11 +2134,8 @@ The default values of the parameters have been chosen to be sufficient under exp
 
 All overrides to the default configuration values must be made in the file `/etc/xroad/conf.d/local.ini`, in the `[op-monitor-buffer]` section.
 
-<details>
-<summary> <span style = font-size:14px;">
-<b>15.1.1 Stopping the Collecting of Operational Data</b>
-</span>
-</summary>
+
+#### 15.1.1 Stopping the Collecting of Operational Data
 
 If, for any reason, operational data should not be collected and forwarded to the operational monitoring daemon, the parameter size can be set to 0:
 
@@ -2536,13 +2154,8 @@ For the service to stay stopped after reboot the following command should be run
 
     echo manual > /etc/init/xroad-opmonitor.override
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>15.2 Operational Monitoring Daemon</b>
-</span>
-</summary>
+
+### 15.2 Operational Monitoring Daemon
 
 The configuration parameters available for configuring the operational monitoring daemon have been documented in \[[UG-OPMONSYSPAR](#Ref_UG-OPMONSYSPAR)\].
 
@@ -2552,23 +2165,16 @@ All overrides to the default configuration values must be made in the file `/etc
 
 In the following sections, some parameters are described which may be required to be changed more likely.
 
-<details>
-<summary> <span style = font-size:14px;">
-<b>15.2.1 Configuring the Health Statistics Period</b>
-</span>
-</summary>
+
+#### 15.2.1 Configuring the Health Statistics Period
 
 By default, health statistics are provided for a period of 600 seconds (10 minutes). This means that if no request exchange has taken place for 10 minutes, all the statistical metrics are reset. Please refer to \[[PR-OPMON](#Ref_PR-OPMON)\] for a detailed overview of the health metrics available.
 
 To change the health statistics period, the value of the parameter health-statistics-period-seconds should be set or edited in the `[op-monitor]`
 section of the file `/etc/xroad/conf.d/local.ini`.
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>15.2.2 Configuring the Parameters Related to Database Cleanup</b>
-</span>
-</summary>
+
+#### 15.2.2 Configuring the Parameters Related to Database Cleanup
 
 Depending on the load and resources of the system, it may be necessary to change the interval of the removal of old database records.
 
@@ -2576,12 +2182,8 @@ The following parameters must be placed in the `[op-monitor]` section of the fil
 
 The parameter `keep-records-for-days` should be edited, for instance if the disk fills up before cleanup occurs, or alternatively, if the default period of 7 days is too short. The parameter `clean-interval` (a Cron expression \[[CRON](#Ref_CRON)\]) defines how often the system checks whether cleanup should be done. If the default period of 12 hours is too long or short it should be edited according to your needs.
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>15.2.3 Configuring the Parameters related to the HTTP Endpoint of the Operational Monitoring Daemon</b>
-</span>
-</summary>
+
+#### 15.2.3 Configuring the Parameters related to the HTTP Endpoint of the Operational Monitoring Daemon
 
 For configuring the endpoint of the operational monitoring daemon, the following parameters are available in the `[op-monitor]` section of the configuration:
 
@@ -2596,12 +2198,8 @@ If any of these values are changed, both the proxy and the operational monitorin
     service xroad-proxy restart
     service xroad-opmonitor restart
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>15.2.4 Installing an External Operational Monitoring Daemon</b>
-</span>
-</summary>
+
+#### 15.2.4 Installing an External Operational Monitoring Daemon
 
 Technically, the operational monitoring daemon can be installed on a separate host from the security server. It is possible to configure several security servers to use that external operational monitoring daemon, but this setup is correct *only* if the security servers are identical clones installed behind a load balancer.
 
@@ -2617,12 +2215,8 @@ As a result of installation, the following services will be running:
     xroad-signer
     xroad-opmonitor
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>15.2.5 Configuring an External Operational Monitoring Daemon and the Corresponding Security Server</b>
-</span>
-</summary>
+
+#### 15.2.5 Configuring an External Operational Monitoring Daemon and the Corresponding Security Server
 
 To make a security server communicate with an external operational monitoring daemon, it is necessary to configure both the daemon and the security server.
 
@@ -2664,12 +2258,8 @@ For the service to stay stopped after reboot the following command should be run
 
 The configuration anchor (renamed as `configuration-anchor.xml`) file must be manually copied into the directory `/etc/xroad` of the external monitoring daemon in order for configuration client to be able to download the global configuration (by default configuration download interval is 60 seconds). The system user xroad must have permissions to read this file.
 
-</details>
-<details>
-<summary> <span style = font-size:14px;">
-<b>15.2.6 Monitoring Health Data over JMXMP</b>
-</span>
-</summary>
+
+#### 15.2.6 Monitoring Health Data over JMXMP
 
 The operational monitoring daemon makes health data available over the JMXMP protocol. The Zabbix monitoring software can be configured to gather that data periodically, using its built in JMX interface type.
 
@@ -2683,61 +2273,35 @@ Please refer to \[[PR-OPMONJMX](#Ref_PR-OPMONJMX)\] for a specification of the n
 
 The xroad-opmonitor package comes with sample host data that can be imported to Zabbix, containing a JMX interface, applications related to sample services and health data items under these services. Also, a script is provided for importing health data related applications and items to several hosts using the Zabbix API. Please find the example files in the directory `/usr/share/doc/xroad-opmonitor/examples/zabbix/`. Please refer to \[[ZABBIX-API](#Ref_ZABBIX-API)\] for information on the Zabbix API.
 
-</details>
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>16 Environmental Monitoring</b>
-</span>
-</summary>
+
+## 16 Environmental Monitoring
 
 Environmental monitoring provides details of the security servers such as operating system, memory, disk space, CPU load, running processes and installed packages, etc.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>16.1 Usage via SOAP API</b>
-</span>
-</summary>
+
+### 16.1 Usage via SOAP API
 
 Environmental monitoring provides SOAP API via X-Road message protocol extension. SOAP messages are described in \[[PR-ENVMONMES](#Ref_PR-ENVMONMES)\].
 
 Monitoring extension schema is defined in \[[MONITORING_XSD](#Ref_MONITORING_XSD)\].
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>16.2 Usage via JMX API</b>
-</span>
-</summary>
+
+### 16.2 Usage via JMX API
 
 Environmental monitoring provides also a standard JMX endpoint which can be accessed with any JMX client (for example Java's jconsole application). See \[[ARC-ENVMON](#Ref_ARC-ENVMON)\] for details.
 
 JMX is disabled on default. JMX is enabled by adding standard JMX-related options to the executable java process as in example by \[[ZABBIX-JMX](#Ref_ZABBIX-JMX)\].
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>16.3 Limiting environmental monitoring remote data set</b>
-</span>
-</summary>
+
+### 16.3 Limiting environmental monitoring remote data set
 
 It is possibility to limit what allowed non-owners can request via environmental monotiring data request by changing monitor-env limit-remote-data-set parameter. By changing flag to be true non-owners who are allowed to query environmental monitoring data will get only certificate, operating system and xroad version information. This parameters is set by default false. Security server owner will always get full data set as requested.
 
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>17 Logs and System Services</b>
-</span>
-</summary>
+## 17 Logs and System Services
 
 **To read logs**, a user must have root user's rights or belong to the `xroad` and/or `adm` system group.
 
-<details>
-<summary> <span style = font-size:18px;">
-<b>17.1 System Services</b>
-</span>
-</summary>
+
+### 17.1 System Services
 
 The most important system services of a security server are as follows.
 
@@ -2761,12 +2325,8 @@ System services are managed through the *systemd* facility.
 Services use the [default unit start rate limits](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html#DefaultStartLimitIntervalSec=).
 An exception to this is `xroad-proxy-ui-api`, which uses a longer start rate limit ([5 starts / 40 seconds](../../src/packages/src/xroad/ubuntu/generic/xroad-proxy-ui-api.service))
 to prevent infinite restart-loop in some specific error situations.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>17.2 Logging configuration</b>
-</span>
-</summary>
+
+### 17.2 Logging configuration
 
 For logging, the **Logback** system is used. Logback configuration files are stored in the directory `/etc/xroad/conf.d/`.
 
@@ -2776,21 +2336,12 @@ Default settings for logging are the following:
 
 -   rolling policy: whenever the file size reaches 100 MB.
 
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>17.3 Fault Detail UUID</b>
-</span>
-</summary>
+
+### 17.3 Fault Detail UUID
 
 In case a security server encounters an error condition during the message exchange, the security server returns a SOAP Fault message \[[PR-MESS](#Ref_PR-MESS)\] containing a UUID (a universally unique identifier, e.g. `1328e974-4fe5-412c-a4c4-f1ac36f20b14`) as the fault detail to the service client's information system. The UUID can be used to find the details of the occurred error from the `xroad-proxy` log.
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>18 Federation</b>
-</span>
-</summary>
+
+## 18 Federation
 
 Federation allows security servers of two different X-Road instances to exchange messages with each other. The instances
 are federated at the central server level. After this, security servers can be configured to opt-in to the federation.
@@ -2836,12 +2387,8 @@ And the following will allow none:
 [configuration-client]
 allowed-federations=xe-test, all, none, ee-test
 ```
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>19 Management REST API</b>
-</span>
-</summary>
+
+## 19 Management REST API
 
 Security server has a REST API that can be used to do all the same server configuration operations that can be done
 using the web UI.
@@ -2882,11 +2429,8 @@ Example of `/etc/xroad/services/local.properties` with modifications:
 ```
 XROAD_PROXY_UI_API_PARAMS=-Dratelimit.requests.per.second=100 -Drequest.sizelimit.binary.upload=1MB
 ```
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.1 API key management operations</b>
-</span>
-</summary>
+
+### 19.1 API key management operations
 
 **Access rights:** [System Administrator](#xroad-system-administrator)
 
@@ -2896,11 +2440,8 @@ API key management endpoints are authenticated to with [HTTP basic authenticatio
 or with session authentication (for admin web application).
 Basic authentication access is limited to localhost by default, but this can
 be changed using System Parameters \[[UG-SYSPAR](#Ref_UG-SYSPAR)\].
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.1.1 Creating new API keys</b>
-</span>
-</summary>
+
+#### 19.1.1 Creating new API keys
 
 A new API key is created with a `POST` request to `/api/v1/api-keys`. Message body must contain the roles to be
 associated with the key. Server responds with data that contains the actual API key. After this point the key
@@ -2920,12 +2461,8 @@ curl -X POST -u <user>:<password> https://localhost:4000/api/v1/api-keys --data 
 ```
 
 In this example the created key was `23bc57cd-b1ba-4702-9657-8d53e335c843`.
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.1.2 Listing API keys</b>
-</span>
-</summary>
+
+#### 19.1.2 Listing API keys
 
 Existing API keys can be listed with a `GET` request to `/api/v1/api-keys`. This lists all keys, regardless of who has created them.
 
@@ -2960,12 +2497,8 @@ curl -X GET -u <user>:<password> https://localhost:4000/api/v1/api-keys/59 -k
 }
 
 ```
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.1.3 Updating API keys</b>
-</span>
-</summary>
+
+#### 19.1.3 Updating API keys
 
 An existing API key is updated with a `PUT` request to `/api/v1/api-keys/{id}`. Message body must contain the roles to be
 associated with the key. Server responds with data that contains the key id and roles associated with the key.
@@ -2981,12 +2514,8 @@ curl -X PUT -u <user>:<password> https://localhost:4000/api/v1/api-keys/60 --dat
 }
 
 ```
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.1.4 Revoking API keys</b>
-</span>
-</summary>
+
+#### 19.1.4 Revoking API keys
 
 An API key can be revoked with a `DELETE` request to `/api/v1/api-keys/{id}`. Server responds with `HTTP 200` if
 revocation was successful and `HTTP 404` if key did not exist.
@@ -2995,12 +2524,8 @@ revocation was successful and `HTTP 404` if key did not exist.
 curl -X DELETE -u <user>:<password> https://localhost:4000/api/v1/api-keys/60  -k
 
 ```
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.1.5 API key caching</b>
-</span>
-</summary>
+
+#### 19.1.5 API key caching
 
 API keys are cached in memory. In typical security server configurations this does not create problems.
 However, if you have configured a setup where multiple security servers share the same `serverconf` database,
@@ -3013,13 +2538,8 @@ REST API endpoints with this API key.
 If you operate such a configuration, you need to target all REST API operations to the same security server node,
 or otherwise ensure that caching will not create problems (for example, always restart REST API modules when API key
 operations are executed).
-</details>
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.2 Executing REST calls</b>
-</span>
-</summary>
+
+### 19.2 Executing REST calls
 
 **Access rights:** Depends on the API.
 
@@ -3043,12 +2563,8 @@ The available APIs are documented in OpenAPI specification \[[REST_UI-API](#Ref_
 as the corresponding UI operations.
 Access to regular APIs is allowed from all IP addresses by default, but this can
 be changed using System Parameters \[[UG-SYSPAR](#Ref_UG-SYSPAR)\].
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.3 Correlation ID HTTP header</b>
-</span>
-</summary>
+
+### 19.3 Correlation ID HTTP header
 
 The REST API endpoints return an **x-road-ui-correlation-id** HTTP header. This header is also logged in `proxy_ui_api.log`, so it
 can be used to find the log messages related to a specific API call.
@@ -3061,12 +2577,8 @@ For example, these log messages are related to an API call with correlation ID `
 2019-08-26 13:16:23,611 [https-jsse-nio-4000-exec-10] correlation-id:[3d5f193102435242] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.niis.xroad.restapi.exceptions.ConflictException: local group with code koodi6 already added]
 2019-08-26 13:16:23,611 [https-jsse-nio-4000-exec-10] correlation-id:[3d5f193102435242] DEBUG o.s.s.w.a.ExceptionTranslationFilter - Chain processed normally
 ```
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.4 Validation errors</b>
-</span>
-</summary>
+
+### 19.4 Validation errors
 
 An error response from the REST API can include validation errors if an unsupported parameter was provided with the request.
 When 
@@ -3112,12 +2624,8 @@ Error             | Explanation
 `NoForwardslashes`  | The provided string contains slashes `/`
 `NoBackslashes`     | The provided string contains backslashes `\`
 `NoPercents`        | The provided string contains percent symbol `%`
-</details>
-<details>
-<summary> <span style = font-size:18px;">
-<b>19.5 Warning responses</b>
-</span>
-</summary>
+
+### 19.5 Warning responses
 
 Error response from the Management API can include additional warnings that you can ignore if seen necessary. The warnings can be ignored by your decision, by executing the same operation with `ignore_warnings` boolean parameter set to `true`. *Always consider the warning before making the decision to ignore it.* 
 
@@ -3151,13 +2659,8 @@ Warning example when trying to register a WSDL that produces non-fatal validatio
 ```
 
 Note that when you are using the admin UI and you encounter warnings, you will always be provided with a popup window with a `CONTINUE` button in it. When you click the `CONTINUE` button in the popup, the request is sent again but this time warnings will be ignored.
-</details>
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>20 Migrating to Remote Database Host</b>
-</span>
-</summary> 
+
+## 20 Migrating to Remote Database Host
 
 Since version `6.22.0` Security Server supports using remote databases. In case you have an already running Security Server with local database, it is possible to migrate it to use remote database host instead. The instructions for this process are listed below.
 
@@ -3246,12 +2749,8 @@ Since version `6.22.0` Security Server supports using remote databases. In case 
     ```
     systemctl start "xroad*"
     ```
-</details>
-<details>
-<summary> <span style = font-size:26px;">
-<b>21 Adding command line arguments</b>
-</span>
-</summary>
+
+## 21 Adding command line arguments
 
 If you need to add command line arguments for the Security Server, for example if you wish to increase Java's maximum heap size, you can do it with the properties file `/etc/xroad/services/local.properties`. The file is also included in the backup archive file when taking a backup of the Security Server's configuration.
 
@@ -3274,4 +2773,3 @@ XROAD_PROXY_PARAM
 XROAD_PROXY_UI_API_PARAM
 XROAD_SIGNER_CONSOLE_PARAM
 ```
-</details>
