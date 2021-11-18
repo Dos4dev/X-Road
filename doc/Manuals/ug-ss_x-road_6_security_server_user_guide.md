@@ -1070,11 +1070,8 @@ X-Road supports both SOAP and REST services. The services are managed on two lev
 ### 6.1 Adding a service description
 
 **Access rights:** [Service Administrator](#xroad-service-administrator)
-<details>
-<summary> <span style = font-size:14px;">
-<b>6.1.1 SOAP</b>
-</span>
-</summary> 
+
+#### 6.1.1 SOAP
 
 When a new WSDL file is added, the security server reads service information from it and displays the information in the table of services. The service code, title and address are read from the WSDL.
 
