@@ -22,18 +22,7 @@ curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
 
-* [RVM](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-18-04)
-```
-sudo apt install gnupg2
-gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-cd /tmp
-curl -sSL https://get.rvm.io -o rvm.sh
-command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
-command curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
-cat /tmp/rvm.sh | bash -s stable --rails
-source /home/virtdev/.rvm/scripts/rvm 
 
-```
  * [docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
 ```
 sudo apt update
@@ -80,7 +69,6 @@ sudo apt install ansible
 ```
 * [lxd](https://ubuntu.com/blog/installing-lxd-and-the-command-line-tool)
 ```
-sudo apt dist-upgrade
 sudo apt install lxd
 
 sudo lxd init
