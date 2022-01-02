@@ -1,0 +1,1 @@
+* xref:inline-text-formatting.adoc[Law]
